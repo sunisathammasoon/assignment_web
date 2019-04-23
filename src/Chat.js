@@ -1,5 +1,6 @@
 
 import React from "react";
+import io from "socket.io-client";
 
 class Chat extends React.Component{
     constructor(props){
@@ -10,6 +11,7 @@ class Chat extends React.Component{
             message: '',
             messages: []
         };
+        this.socket = io('localhost:8080');
     }
     render(){
         return (
