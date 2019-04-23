@@ -21,7 +21,11 @@ class Chat extends React.Component{
                                 <div className="card-title">Join Chat Here</div>
                                 <hr/>
                                 <div className="messages">
-
+                                    {this.state.messages.map(message => {
+                                        return (
+                                            <div>{message.author}: {message.message}</div>
+                                        )
+                                    })}
                                 </div>
                                 <div className="footer">
                                     <input type="text" placeholder="Username" value={this.state.username} onChange={ev => this.setState({username: ev.target.value})} className="form-control"/>
