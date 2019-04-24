@@ -1,10 +1,19 @@
 var express = require('express');
 var socket = require('socket.io');
 var app = express();
-
+/*
 server = app.listen(8080, function(){
     console.log('server is running on port 8080')
 });
+*/
+
+var port = process.env.PORT || 5000; // Use the port that Heroku provides or default to 5000
+server = app.listen(port, function() {
+  console.log("Express server listening on port");
+});
+
+//test
+
 
 io = socket(server);
 
